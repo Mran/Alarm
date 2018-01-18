@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.List;
  * Created by mran on 18-1-7.
  */
 
-public class AlermGroup extends ConstraintLayout {
+public class AlermGroup extends RelativeLayout {
     private Paint mPaintBigCirle;
     private float smallCircle;
     private float bigCircle;
@@ -99,7 +100,6 @@ public class AlermGroup extends ConstraintLayout {
     @Override
     protected void onDraw(Canvas canvas) {
 //        super.onDraw(canvas);
-        Log.d("AlermGroup", "onDraw: " + hourDegress);
 
 
         //画出底层大圆

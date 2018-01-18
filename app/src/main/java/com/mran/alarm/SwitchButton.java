@@ -62,17 +62,14 @@ public class SwitchButton extends View {
         mPaint.setAntiAlias(true);
         mPaint.setColor(0xffaa1223);
         mPaint.setTextSize(50);
-//        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.XOR));
         mBgPaint = new Paint();
         mBgPaint.setAntiAlias(true);
         mBgPaint.setColor(0xffddeeaa);
         mBgPaint.setTextSize(50);
-//        mBgPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP));
         mCirPaint = new Paint();
         mCirPaint.setAntiAlias(true);
         mCirPaint.setColor(0xffffffff);
-//        mCirPaint.setARGB(255,255,255,255);
-//        mCirPaint.setShadowLayer(10, 0, 0, 0xff000000);
+
         mCirPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.XOR));
 
         mL2RAnimation = new ValueAnimator();
@@ -83,15 +80,13 @@ public class SwitchButton extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-//        canvas.save();
         canvas.drawRoundRect(5, 5, width, height, height / 2, height / 2, mBgPaint);
-        mCirPaint.setShadowLayer(10, 0, 0, 0xff000000);
-        mCirPaint.setStrokeWidth(0.1f);
+        mCirPaint.setShadowLayer(10, 1, 2, 0xff000000);
+        mCirPaint.setStrokeWidth(0.2f);
         mCirPaint.setStyle(Paint.Style.STROKE);
         canvas.drawCircle(cirX, height / 2, cirRadius-1, mCirPaint);
 
         canvas.drawCircle(cirX, height / 2, cirRadius, mCirPaint);
-//        canvas.restore();
         canvas.saveLayer(0, 0, width, height, null);
         mPaint.setColor(0xffffffff);
         canvas.drawText("AM", cirRadius / 4.5f, height / 3 * 2, mPaint);
